@@ -63,7 +63,6 @@ public class One100 {
 				}
 			}
 		}
-		//blah
 		if (pNums) {
 		//num[0] will be too large if there is a second number (because of how I converted the string to a number
 		//this fixes that by dividing by a power of 10
