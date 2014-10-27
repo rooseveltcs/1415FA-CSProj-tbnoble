@@ -1,0 +1,28 @@
+import static org.junit.Assert.*;
+import java.util.ArrayList;
+import org.junit.Test;
+
+public class One100Test {
+
+	@Test
+	public void testGetFactors() {
+		int[] input = {10, 15};
+		ArrayList<Integer> expectedOutput = new ArrayList<Integer>();
+		expectedOutput.add(5);
+		expectedOutput.add(0);
+		assertEquals(expectedOutput, One100.getFactors(input));
+	}
+	
+	@Test
+	public void testGetFactors2() {
+		int[] input2 = {10, 0};
+		ArrayList<Integer> expectedOutput2 = new ArrayList<Integer>();
+		expectedOutput2.add(1);
+		expectedOutput2.add(2);
+		expectedOutput2.add(5);
+		expectedOutput2.add(10);
+		expectedOutput2.add(10);
+		expectedOutput2.add(10);
+		assertEquals(expectedOutput2, One100.getFactors(input2));
+	}
+}
