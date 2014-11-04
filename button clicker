@@ -1,0 +1,48 @@
+import java.awt.event.*;
+import javax.swing.*;
+
+public class buttonClicker implements ActionListener {
+	String first;
+	String second;
+	boolean good;
+	int int1;
+	int int2;
+	JFrame frame;
+	JLabel label;
+	JTextField first1;
+	JTextField second2;
+	public buttonClicker(JTextField first, JTextField second, JFrame frame, JLabel label) {
+		this.first = first.getText();
+		this.second = second.getText();
+		good = true;
+		this.frame = frame;
+		this.label = label;
+		first1 = first;
+		second2 = second;
+		label.setText("   ");
+		frame.add(label);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		int1 = toString(first1.getText());
+		int2 = toString(second2.getText());
+		if(good) {
+			label.setText("" + (int1 * int2));
+		} else {
+			label.setText("ERROR");
+		}
+		frame.add(label);
+		good = true;
+	}
+	
+	public int toString(String string1) {
+		int returnInt = 0;
+		for (int i = 0; i < string1.length(); i++) {
+			returnInt += ((string1.charAt(i) - 48) * Math.pow(10, string1.length() - i - 1));
+			if (string1.charAt(i) < 48 || string1.charAt(i) > 57) {
+				good = false;
+			}
+		}
+		return returnInt;
+	}
+}
